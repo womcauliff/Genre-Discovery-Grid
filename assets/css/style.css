@@ -1,0 +1,30 @@
+.jumbo{
+	text-align: center;
+	border: solid gray;
+	background-color: #660066;
+	color: white;
+
+}
+
+#navbar{
+	background-color: black;
+	color: white;
+}
+
+.contactLink{
+	background: #660066;
+	
+
+}
+
+.musicLink{
+	background: #660066;
+	
+
+}
+
+body{
+	background: #4d4d33;
+}
+
+.navicon
