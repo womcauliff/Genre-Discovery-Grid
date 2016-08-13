@@ -11,20 +11,24 @@
 	color: white;
 }
 
-.contactLink{
-	background: #660066;
-	
-
-}
-
-.musicLink{
-	background: #660066;
-	
-
-}
 
 body{
 	background: #4d4d33;
 }
 
-.navicon
+.navIcons{
+	width: 30px;
+	height: 30px;
+
+
+}
+
+#teamName{
+	color: white;
+}
+
+.ourButton{
+	border:solid black;
+}
+
+
