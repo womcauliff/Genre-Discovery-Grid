@@ -1,34 +1,19 @@
-.jumbo{
+
+.genre-image {
+	background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 220px;
+}
+.genre-wrapper {
 	text-align: center;
-	border: solid gray;
-	background-color: #660066;
-	color: white;
-
-}
-
-#navbar{
-	background-color: black;
-	color: white;
 }
 
 
-body{
-	background: #4d4d33;
-}
-
-.navIcons{
-	width: 30px;
-	height: 30px;
-
+/* Foundation Overrides */
+.row {
 
 }
-
-#teamName{
-	color: white;
+.column {
+	
 }
-
-.ourButton{
-	border:solid black;
-}
-
-
