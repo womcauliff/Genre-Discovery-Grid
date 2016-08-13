@@ -1,3 +1,7 @@
+/**
+ * From CSS-Tricks
+ * https://css-tricks.com/snippets/javascript/get-url-variables/
+ */
 function getQueryVariable(variable)
 {
        var query = window.location.search.substring(1);
@@ -8,5 +12,8 @@ function getQueryVariable(variable)
        }
        return(false);
 }
+var genreQuery = getQueryVariable("genre");
+console.log(genreQuery);
 
-console.log(getQueryVariable("genre"));
+
+$("#genre").text(genreQuery);
