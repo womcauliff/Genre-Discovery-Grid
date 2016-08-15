@@ -1,8 +1,5 @@
 $(document).ready(function(){
 
-
-
-
 	function getQueryVariable(variable)
 	{
 	       var query = window.location.search.substring(1);
@@ -18,4 +15,14 @@ $(document).ready(function(){
 	console.log(genreQuery);
 
 	$("#genre").text(genreQuery);
+
+	SC.initialize({
+	  client_id: 'a5300cfa6885a74bd314b43a1ae6d526'
+	});
+	SC.get('users/forss').then(function(user){console.log('Forss', user);});
+	// // stream track id 293
+	// SC.stream('/tracks/293').then(function(player){
+	//   player.play();
+	// });
+
 })
