@@ -1,4 +1,3 @@
-
 .genre-image {
 	background-position: center center;
     background-repeat: no-repeat;
@@ -16,4 +15,8 @@
 }
 .column {
 	
+}
+
+#header {
+	text-align: center;
 }
