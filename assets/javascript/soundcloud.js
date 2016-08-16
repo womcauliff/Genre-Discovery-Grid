@@ -30,6 +30,8 @@ $(document).ready(function(){
 
 		var trackURL = '';
 		trackURL = tracks[0].uri;
+
+		//Auto-load first track from results
 		var oembedElement = document.getElementById('oembed');
 		SC.oEmbed(trackURL, {element: oembedElement}).then(function(result){
 			console.log('oembed', result);
@@ -37,17 +39,32 @@ $(document).ready(function(){
 			console.log('oembed err', err);
 		});
 
-
-
 		var tmp = '';
 		$(tracks).each(function(index, track) {
-
-			$('#results').append($('<li></li>').append($("<a>").attr("href", track.permalink_url).text(track.title)));
+			var trackDiv = $("<div>").addClass("trackResult").attr("data-uri", track.uri).text(track.title);
+			$('#results').append($('<li>').append(trackDiv));
       		// $('<li></li>').html(track.title + ' - ' + track.genre));
     	});
 	}).catch(function(error){
 		console.log('catch', error);
 	});
+
+
+
+	$(document).on("click", ".trackResult", function() {
+		console.log("Clicked! " + $(this).text());
+		//deleting old embed player
+		$("oembed").empty();
+	
+		//creating new embed player, add to DOM
+		var oembedElement = document.getElementById('oembed');
+		SC.oEmbed($(this).data("uri"), {element: oembedElement}).then(function(result){
+			console.log('oembed', result);
+		}).catch(function(err){
+			console.log('oembed err', err);
+		});
+	});
+
 
 	// SC.get("/tracks", {
  //      genres: genreQuery,
