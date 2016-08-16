@@ -26,6 +26,19 @@ $(document).ready(function(){
 	};
 	SC.get('tracks/', filters).then(function(tracks){
 		console.log(tracks);
+
+
+		var trackURL = '';
+		trackURL = tracks[0].uri;
+		var oembedElement = document.getElementById('oembed');
+		SC.oEmbed(trackURL, {element: oembedElement}).then(function(result){
+			console.log('oembed', result);
+		}).catch(function(err){
+			console.log('oembed err', err);
+		});
+
+
+
 		var tmp = '';
 		$(tracks).each(function(index, track) {
 
