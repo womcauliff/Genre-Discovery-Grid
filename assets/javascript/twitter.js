@@ -14,7 +14,7 @@ $(document).ready(function(){
 	var genreQuery = getQueryVariable("genre");
 	console.log(genreQuery);
 
-	var url = "http://floating-river-39782.herokuapp.com/";
+	var url = "https://floating-river-39782.herokuapp.com/";
 	var twitterAPIEndpoint = "1.1/search/tweets.json";
 	var request = url + twitterAPIEndpoint + "?" + "q=" + genreQuery;
 
