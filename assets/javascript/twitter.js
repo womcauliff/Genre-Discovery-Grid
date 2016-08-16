@@ -19,7 +19,7 @@ $(document).ready(function(){
 	var request = url + twitterAPIEndpoint + "?" + "q=" + genreQuery;
 
 	$.ajax({
-		method: "GET",
+		dataType: 'jsonp'
 		url: request,
 	}).done(function(response) {
 		console.log(response);
