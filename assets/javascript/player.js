@@ -58,12 +58,13 @@ function displaySCResults(query) {
 			console.log('oembed err', err);
 		});
 
-		var tmp = '';
+		var ol = $('<ol>');
 		$(tracks).each(function(index, track) {
-			var trackDiv = $("<div>").addClass("trackResult").attr("data-uri", track.uri).text(track.title);
-			$('#results').append($('<li>').append(trackDiv));
+			var trackDiv = $("<div>").addClass("trackResult").attr("data-uri", track.uri).html(track.title);
+			ol.append($('<li>').addClass("result").append(trackDiv));
       		// $('<li></li>').html(track.title + ' - ' + track.genre));
     	});
+		$('#results').append(ol);
 	}).catch(function(error){
 		console.log('catch', error);
 	});
@@ -81,13 +82,21 @@ function displayTWResults(query) {
 	
 	var moochURL = "https://floating-river-39782.herokuapp.com/";
 	var twitAPIEndpoint = "1.1/search/tweets.json";
-	var request = moochURL + twitAPIEndpoint + "?" + "q=" + genreQuery;
+	var hashtag = "%23" + genreQuery;
+	var request = moochURL + twitAPIEndpoint + "?" + "q=" + hashtag;
 
 	$.ajax({
 		dataType: 'jsonp',
 		url: request,
 	}).done(function(response) {
 		console.log(response);
+
+		var ol = $('<ol>');
+		$(response.statuses).each(function(index, status) {
+			var tweetDiv = $("<div>").addClass("tweetResult").html(status.text);
+			ol.append($('<li>').addClass("result").append(tweetDiv));
+		});
+		$('#results').append(ol);
 	});
 }
 
