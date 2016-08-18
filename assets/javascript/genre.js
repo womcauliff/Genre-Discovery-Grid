@@ -25,8 +25,10 @@ var genres = [
 	new Genre("vaporwave", "assets/images/house.png", "assets/images/house.png", "vaporwave")
 ];
 
-var columnsPerRow = 4;
-var colSize = 12 / columnsPerRow;
+var smallColPerRow = 2;
+var smallColSize = 12 / smallColPerRow;
+var mediumColPerRow = 4;
+var mediumColSize = 12 / mediumColPerRow;
 
 $(document).ready(function() {
 	console.log("ready");
@@ -52,14 +54,17 @@ $(document).ready(function() {
 
 		link.append(genreWrapper);
 
-		var column = $("<div>").addClass("medium-" + colSize + " column");
+		var column = $("<div>")
+			.addClass("column")
+			.addClass("medium-" + mediumColSize)
+			.addClass("small-" + smallColSize);
 
 		column.append(link);
 
 		genreRow.append(column);
 
 		//use mod to do action every 4th time
-		if((i+1) % columnsPerRow === 0) {
+		if((i+1) % mediumColPerRow === 0) {
 			console.log("adding row to screen");
 			$("body").append(genreRow);
 			genreRow = $("<div>").addClass("row");
