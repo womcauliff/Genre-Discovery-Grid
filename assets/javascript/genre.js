@@ -34,7 +34,7 @@ $(document).ready(function() {
 	console.log("ready");
 
 	// create a parent row
-	var genreRow = $("<div>").addClass("row");	
+	var genreRow = $("<div>").addClass("row genre-row" );	
 	for (var i = 0; i < genres.length; i++) {
 
 		console.log(i + genres[i]);
@@ -67,7 +67,7 @@ $(document).ready(function() {
 		if((i+1) % mediumColPerRow === 0) {
 			console.log("adding row to screen");
 			$("body").append(genreRow);
-			genreRow = $("<div>").addClass("row");
+			genreRow = $("<div>").addClass("row genre-row");
 		}
 	};
 });
