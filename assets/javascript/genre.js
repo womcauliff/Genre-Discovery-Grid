@@ -18,9 +18,9 @@ function Genre(headerText, gif, still, dataQuery) {
 
 var genres = [
 	new Genre("rock", "assets/images/rock.gif", "assets/images/rockstill.gif", "classicrock"),
-	new Genre("hip hop", "assets/images/hiphop.gif",  "assets/images/house.png", "hiphop"),
-	new Genre("electronic", "assets/images/electronic.gif", "assets/images/house.png", "electronic"),
-	new Genre("jazz", "assets/images/jazz.gif", "assets/images/house.png", "jazz"),
+	new Genre("hip hop", "assets/images/hiphopmove.gif",  "assets/images/hiphopstill.gif", "hiphop"),
+	new Genre("electronic", "assets/images/electronic.gif", "assets/images/electronicstill.gif", "electronic"),
+	new Genre("jazz", "assets/images/jazz.gif", "assets/images/jazzstill.gif", "jazz"),
 	new Genre("future funk", "assets/images/house.png", "assets/images/house.png", "futurefunk"),
 	new Genre("vaporwave", "assets/images/house.png", "assets/images/house.png", "vaporwave")
 ];
@@ -74,24 +74,42 @@ $(document).ready(function() {
 	};
 });
 
-	 
+	$(document).on(
+    "mouseenter", //the event to listen for
+    ".genre-wrapper",//the class that we are listening on
+    function() {//the action to take when mouseenter event occurs
+        var imgDiv = $(this).children('.genre-image');
+        console.log('switching to Gif');
+        imgDiv.css('background-image',"url('" + imgDiv.data('animate')+ "')");
+    }
+);
+
+	$(document).on(
+    "mouseleave", //the event to listen for
+    ".genre-wrapper",//the class that we are listening on 
+    function() {//the action to take when mouseleave event occurs
+        var imgDiv = $(this).children('.genre-image');
+        console.log('switching to still');
+        imgDiv.css("background-image", "url('" + imgDiv.data('still') + "')");
+    }
+);
       
-$(document).on("mouseover", ".genre-wrapper", function() {
-		console.log('mouseover');
-	 	var imgDiv = $(this).children('.genre-image');
-		var state = imgDiv.attr('data-state');
-    	if (state == 'still') {
-    		console.log('switching to Gif');
-					imgDiv.css('background-image',"url('" + imgDiv.data('animate')+ "')");
-                    imgDiv.attr('data-state', 'animate');
+// $(document).hover("mouseover", ".genre-wrapper", function() {
+// 		console.log('mouseover');
+// 	 	var imgDiv = $(this).children('.genre-image');
+// 		var state = imgDiv.attr('data-state');
+//     	if (state == 'still') {
+//     		console.log('switching to Gif');
+// 					imgDiv.css('background-image',"url('" + imgDiv.data('animate')+ "')");
+//                     imgDiv.attr('data-state', 'animate');
 
-         }  else {
-         	console.log('switching to still');
-         			imgDiv.css("background-image", "url('" + imgDiv.data('still') + "')");
-                    imgDiv.attr('data-state', 'still');
-                    }
+//          }  else {
+//          	console.log('switching to still');
+//          			imgDiv.css("background-image", "url('" + imgDiv.data('still') + "')");
+//                     imgDiv.attr('data-state', 'still');
+//                     }
 
-        });
+//         });
 
 
 	
