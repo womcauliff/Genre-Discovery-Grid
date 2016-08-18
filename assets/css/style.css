@@ -24,3 +24,36 @@
 #appname {
 	text-align: center;
 }
+.genre-row{
+
+	margin-bottom: 20px;
+}
+
+.genre-row .column{
+	
+	padding:0 5px;
+	margin-bottom: 10px;
+	
+	}
+.genre-heading{
+	margin: 0;
+	background:  orange;
+	text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+	color: white;
+	
+}
+.genre-image{
+	background-color: white;
+	
+}
+.genre-wrapper{
+	box-shadow: 0 0 2em  #888888;
+
+}
+
+#genre-head{
+	border: solid black;
+	color: white;
+	background-color: orange;
+	text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
