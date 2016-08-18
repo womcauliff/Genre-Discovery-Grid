@@ -24,3 +24,27 @@
 #appname {
 	text-align: center;
 }
+.genre-row{
+
+	margin-bottom: 20px;
+}
+
+.genre-row .column{
+	
+	padding:0 5px;
+	margin-bottom: 10px;
+	
+	}
+.genre-heading{
+	margin: 0;
+	background:  orange;
+	
+}
+.genre-image{
+	background-color: white;
+	
+}
+.genre-wrapper{
+	box-shadow: 0 0 2em  #888888;
+
+}
