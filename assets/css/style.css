@@ -25,35 +25,60 @@
 	text-align: center;
 }
 .genre-row{
-
 	margin-bottom: 20px;
 }
-
 .genre-row .column{
-	
 	padding:0 5px;
 	margin-bottom: 10px;
-	
-	}
+}
 .genre-heading{
 	margin: 0;
 	background:  orange;
 	text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 	color: white;
-	
 }
 .genre-image{
 	background-color: white;
-	
 }
 .genre-wrapper{
 	box-shadow: 0 0 2em  #888888;
-
 }
-
 #genre-head{
 	border: solid black;
 	color: white;
 	background-color: orange;
 	text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
+
+/* Player Page */
+
+/* 
+ From http://jsfiddle.net/7S4Xx/240/,
+ CSS for fixed header and footer,
+ with internal scrolling content.
+*/
+body {
+    overflow: hidden;
+}
+#header {
+    width: 100%;
+    height: 4em;
+    background: red;
+    position: fixed;
+    top: 0;
+}
+#content {
+    max-height: calc(100% - 17em);
+    overflow-y: scroll;
+    margin-top: 4.5em !important;
+}
+#oembed {
+    width: 100%;
+    height: 12.5em;
+    background: red;
+    position: fixed;
+    bottom: 0;
+}
+#oembed iframe {
+	height: inherit;
+}	

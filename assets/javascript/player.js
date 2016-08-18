@@ -4,7 +4,7 @@ $(document).ready(function(){
 	//parse url for the genre query, add to global var
 	genreQuery = getQueryVariable("genre");
 	console.log(genreQuery);
-	$("#genre").text(genreQuery);
+	$("#genre").text("#"+genreQuery);
 
 	//on load, display Soundcloud results first, rather than Twitter
 	displaySCResults(genreQuery);
