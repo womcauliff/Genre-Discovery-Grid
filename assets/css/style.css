@@ -81,4 +81,19 @@ body {
 }
 #oembed iframe {
 	height: inherit;
-}	
+}
+#button-row {
+	position: relative;
+	top: -2em;
+}
+#sc-button-col {
+	position: relative;
+	left: -1em;
+}
+#tw-button-col {
+	position: relative;
+	right: -1em;
+}
+.button {
+	width: 9em;
+}
