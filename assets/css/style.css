@@ -99,7 +99,16 @@ body {
 }
 
 /* Player Page Content */
-#results ol {
+#results-twitter {
+	display: none;
+}
+#results-soundcloud {
+	display: block;
+}
+#results-twitter ol {
+	margin-left: 0px;
+}
+#results-soundcloud ol {
 	margin-left: 0px;
 }
 li.result {
