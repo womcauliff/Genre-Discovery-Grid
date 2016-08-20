@@ -9,6 +9,7 @@ $(document).ready(function(){
 
 	//on load, display Soundcloud results first, rather than Twitter
 	displaySCResults(genreQuery);
+	displayTWResults(genreQuery);
 });
 
 /**
@@ -84,7 +85,7 @@ function displaySCResults(query) {
 			ol.append($('<li>').addClass("result").append(trackDiv));
       		// $('<li></li>').html(track.title + ' - ' + track.genre));
     	});
-		$('#results').append(ol);
+		$('#results-soundcloud').append(ol);
 	}).catch(function(error){
 		console.log('catch', error);
 	});
@@ -134,7 +135,7 @@ function displayTWResults(query) {
 				.append(tweetText);
 			ol.append($('<li>').addClass("result").append(tweetDiv));
 		});
-		$('#results').append(ol);
+		$('#results-twitter').append(ol);
 	});
 }
 
@@ -142,12 +143,12 @@ function displayTWResults(query) {
  * Binds the API call functions to the UI buttons
  */
 $("#querySoundcloud").on("click", function() {
-	console.log("soundcloud button clicked");
-	displaySCResults(genreQuery);
+	$("#results-twitter").hide();
+	$("#results-soundcloud").show();
 });
 $("#queryTwitter").on("click", function() {
-	console.log("twitter button clicked");
-	displayTWResults(genreQuery);
+	$("#results-twitter").show();
+	$("#results-soundcloud").hide();
 });
 
 /**
