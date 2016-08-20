@@ -78,7 +78,7 @@ $(document).ready(function() {
 		}
 	};
 });
-
+	// Event listener hovering over the Gifs to create some action.
 	$(document).on(
     "mouseenter", //the event to listen for
     ".genre-wrapper",//the class that we are listening on
@@ -99,23 +99,5 @@ $(document).ready(function() {
     }
 );
       
-// $(document).hover("mouseover", ".genre-wrapper", function() {
-// 		console.log('mouseover');
-// 	 	var imgDiv = $(this).children('.genre-image');
-// 		var state = imgDiv.attr('data-state');
-//     	if (state == 'still') {
-//     		console.log('switching to Gif');
-// 					imgDiv.css('background-image',"url('" + imgDiv.data('animate')+ "')");
-//                     imgDiv.attr('data-state', 'animate');
 
-//          }  else {
-//          	console.log('switching to still');
-//          			imgDiv.css("background-image", "url('" + imgDiv.data('still') + "')");
-//                     imgDiv.attr('data-state', 'still');
-//                     }
-
-//         });
-
-
-	
 
