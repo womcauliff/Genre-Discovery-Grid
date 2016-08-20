@@ -17,6 +17,7 @@ function Genre(headerText, gif, still, dataQuery) {
 }
 
 var genres = [
+	new Genre ("pop", "assets/images/pop.gif", "assetts/images/pop-still.gif", "pop"),
 	new Genre("rock", "assets/images/rock.gif", "assets/images/rockstill.gif", "classicrock"),
 	new Genre("hip hop", "assets/images/hiphopmove.gif",  "assets/images/hiphopstill.gif", "hiphop"),
 	new Genre("electronic", "assets/images/electronic.gif", "assets/images/electronicstill.gif", "electronic"),
@@ -24,7 +25,7 @@ var genres = [
 	new Genre("vaporwave", "assets/images/vaporwave.gif", "assets/images/vaporwave-still.gif", "vaporwave"),
 	new Genre("tropical house", "assets/images/tropicalhouse.gif", "assets/images/tropicalhouse-still.gif", "tropicalhouse"),
 	new Genre("bluegrass", "assets/images/bluegrass.gif", "assets/images/bluegrass-still.gif", "bluegrass")
-];
+	];
 
 var smallColPerRow = 2;
 var smallColSize = 12 / smallColPerRow;
