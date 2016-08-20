@@ -17,15 +17,17 @@ function Genre(headerText, gif, still, dataQuery) {
 }
 
 var genres = [
-	new Genre ("pop", "assets/images/pop.gif", "assetts/images/pop-still.gif", "pop"),
+	new Genre ("pop", "assets/images/pop.gif", "assets/images/pop-still.gif", "pop"),
 	new Genre("rock", "assets/images/rock.gif", "assets/images/rockstill.gif", "classicrock"),
 	new Genre("hip hop", "assets/images/hiphopmove.gif",  "assets/images/hiphopstill.gif", "hiphop"),
 	new Genre("electronic", "assets/images/electronic.gif", "assets/images/electronicstill.gif", "electronic"),
 	new Genre("jazz", "assets/images/jazz.gif", "assets/images/jazzstill.gif", "jazz"),
 	new Genre("vaporwave", "assets/images/vaporwave.gif", "assets/images/vaporwave-still.gif", "vaporwave"),
 	new Genre("tropical house", "assets/images/tropicalhouse.gif", "assets/images/tropicalhouse-still.gif", "tropicalhouse"),
-	new Genre("bluegrass", "assets/images/bluegrass.gif", "assets/images/bluegrass-still.gif", "bluegrass")
-	];
+	new Genre("bluegrass", "assets/images/bluegrass.gif", "assets/images/bluegrass-still.gif", "bluegrass"),
+	new Genre("dubstep", "assets/images/dubstep.gif", "assets/images/dubstepstill.gif", "dubstep"),
+	new Genre("reggae", "assets/images/reggae.gif", "assets/images/reggae_still.gif", "reggae")
+];
 
 var smallColPerRow = 2;
 var smallColSize = 12 / smallColPerRow;
@@ -38,11 +40,6 @@ $(document).ready(function() {
 	// create a parent row
 	var genreRow = $("<div>").addClass("row genre-row" );	
 	for (var i = 0; i < genres.length; i++) {
-
-		console.log(i + genres[i]);
-		//add data-state
-		//add data-still
-		//add data-animate
 
 		var genreHeading = $("<h4>").addClass("genre-heading")
 		.text(genres[i].headerText);
@@ -72,15 +69,15 @@ $(document).ready(function() {
 
 		genreRow.append(column);
 
-		//use mod to do action every 4th time
+		// Use modulus to add row to page after
+		// mediumColPerRow columns
 		if((i+1) % mediumColPerRow === 0) {
-			console.log("adding row to screen");
+			// adding row to screen
 			$("body").append(genreRow);
 			genreRow = $("<div>").addClass("row genre-row");
 		}
 		else if (i === genres.length - 1) {
-			//add what we got
-			console.log((i+1) % mediumColPerRow);
+			// Add what we got
 			var colsNeeded = 4 - (i+1) % mediumColPerRow; 
 			for (var n = 0; n < colsNeeded; n++) {
 				column = $("<div>")
@@ -89,7 +86,7 @@ $(document).ready(function() {
 					.addClass("small-" + smallColSize);
 				genreRow.append(column);
 			}
-			console.log("adding row to screen");
+			// Adding row to screen
 			$("body").append(genreRow);
 		}
 	};

@@ -115,7 +115,7 @@ function displayTWResults(query) {
 
 		var ol = $('<ol>');
 		$(response.statuses).each(function(index, status) {
-			console.log(status.user.profile_image_url_https);
+			
 			var tweetLink = $("<a>")
 				.attr("target", "_blank")
 				.attr("href", "https://www.twitter.com/" + status.user.id + "/status/" + status.id_str)
