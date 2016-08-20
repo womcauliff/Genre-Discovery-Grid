@@ -1,4 +1,5 @@
 var genreQuery = "";
+var loadedTrack = {};
 
 $(document).ready(function(){
 	//parse url for the genre query, add to global var
@@ -52,15 +53,34 @@ function displaySCResults(query) {
 
 		//Auto-load first track from results
 		var oembedElement = document.getElementById('oembed');
-		SC.oEmbed(trackURL, {element: oembedElement}).then(function(result){
-			console.log('oembed', result);
-		}).catch(function(err){
+		SC.oEmbed(trackURL, {element: oembedElement})
+		.catch(function(err){
 			console.log('oembed err', err);
 		});
 
 		var ol = $('<ol>');
 		$(tracks).each(function(index, track) {
-			var trackDiv = $("<div>").addClass("trackResult").attr("data-uri", track.uri).html(track.title);
+
+
+			var trackArt = $("<div>")
+				.addClass("track-art");
+			
+			if(track.artwork_url !== null) {
+				trackArt.css("background-image", "url('" + track.artwork_url + "')");
+			}
+			else {
+				trackArt.css("background-image", "url('" + track.user.avatar_url + "')");
+			}
+				
+			var trackTitle = $("<p>")
+				.addClass("track-title")
+				.html(track.title);
+
+			var trackDiv = $("<div>")
+				.addClass("trackResult")
+				.attr("data-uri", track.uri)
+				.append(trackArt)
+				.append(trackTitle);
 			ol.append($('<li>').addClass("result").append(trackDiv));
       		// $('<li></li>').html(track.title + ' - ' + track.genre));
     	});
@@ -93,7 +113,25 @@ function displayTWResults(query) {
 
 		var ol = $('<ol>');
 		$(response.statuses).each(function(index, status) {
-			var tweetDiv = $("<div>").addClass("tweetResult").html(status.text);
+			console.log(status.user.profile_image_url_https);
+			var tweetLink = $("<a>")
+				.attr("target", "_blank")
+				.attr("href", "https://www.twitter.com/" + status.user.id + "/status/" + status.id_str)
+				.addClass("tweet-link");
+
+			var tweetPic = $("<div>")
+				.addClass("tweet-pic")
+				.css("background-image", "url('" + status.user.profile_image_url_https + "')");
+				
+			var tweetText = $("<p>")
+				.addClass("tweet-text")
+				.html(status.text);
+
+			var tweetDiv = $("<div>")
+				.addClass("tweetResult")
+				.append(tweetLink)
+				.append(tweetPic)
+				.append(tweetText);
 			ol.append($('<li>').addClass("result").append(tweetDiv));
 		});
 		$('#results').append(ol);
