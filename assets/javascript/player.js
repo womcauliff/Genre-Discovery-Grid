@@ -56,6 +56,7 @@ function displaySCResults(query) {
 		var oembedElement = document.getElementById('oembed');
 		SC.oEmbed(trackURL, {element: oembedElement})
 		.catch(function(err){
+			auto_play: true
 			console.log('oembed err', err);
 		});
 
