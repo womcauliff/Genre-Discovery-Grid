@@ -26,6 +26,7 @@
 }
 .genre-row{
 	margin-bottom: 20px;
+
 }
 .genre-row .column{
 	padding:0 5px;
@@ -132,4 +133,14 @@ li.result {
 	left: 0;
 	height: 100%;
 	width: 100%;
+}
+@media screen and (min-width: 40em) {
+	h1#genre-head {
+		margin-left: -.9375rem;
+		margin-right: -.9375rem;
+	}
+}
+h1#genre-head {
+	margin-left: -.625rem;
+	margin-right: -.625rem;
 }
