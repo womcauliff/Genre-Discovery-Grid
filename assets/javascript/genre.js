@@ -21,8 +21,9 @@ var genres = [
 	new Genre("hip hop", "assets/images/hiphopmove.gif",  "assets/images/hiphopstill.gif", "hiphop"),
 	new Genre("electronic", "assets/images/electronic.gif", "assets/images/electronicstill.gif", "electronic"),
 	new Genre("jazz", "assets/images/jazz.gif", "assets/images/jazzstill.gif", "jazz"),
-	new Genre("future funk", "assets/images/house.png", "assets/images/house.png", "futurefunk"),
-	new Genre("vaporwave", "assets/images/house.png", "assets/images/house.png", "vaporwave")
+	new Genre("vaporwave", "assets/images/vaporwave.gif", "assets/images/vaporwave-still.gif", "vaporwave"),
+	new Genre("tropical house", "assets/images/tropicalhouse.gif", "assets/images/tropicalhouse-still.gif", "tropicalhouse"),
+	new Genre("bluegrass", "assets/images/bluegrass.gif", "assets/images/bluegrass-still.gif", "bluegrass")
 ];
 
 var smallColPerRow = 2;
@@ -76,6 +77,20 @@ $(document).ready(function() {
 			$("body").append(genreRow);
 			genreRow = $("<div>").addClass("row genre-row");
 		}
+		else if (i === genres.length - 1) {
+			//add what we got
+			console.log((i+1) % mediumColPerRow);
+			var colsNeeded = 4 - (i+1) % mediumColPerRow; 
+			for (var n = 0; n < colsNeeded; n++) {
+				column = $("<div>")
+					.addClass("column")
+					.addClass("medium-" + mediumColSize)
+					.addClass("small-" + smallColSize);
+				genreRow.append(column);
+			}
+			console.log("adding row to screen");
+			$("body").append(genreRow);
+		}
 	};
 });
 	// Event listener hovering over the Gifs to create some action.
@@ -84,7 +99,6 @@ $(document).ready(function() {
     ".genre-wrapper",//the class that we are listening on
     function() {//the action to take when mouseenter event occurs
         var imgDiv = $(this).children('.genre-image');
-        console.log('switching to Gif');
         imgDiv.css('background-image',"url('" + imgDiv.data('animate')+ "')");
     }
 );
@@ -94,7 +108,6 @@ $(document).ready(function() {
     ".genre-wrapper",//the class that we are listening on 
     function() {//the action to take when mouseleave event occurs
         var imgDiv = $(this).children('.genre-image');
-        console.log('switching to still');
         imgDiv.css("background-image", "url('" + imgDiv.data('still') + "')");
     }
 );
