@@ -29,7 +29,7 @@ var genres = [
 	new Genre("reggae", "assets/images/reggae.gif", "assets/images/reggae_still.gif", "reggae")
 ];
 
-var smallColPerRow = 2;
+var smallColPerRow = 1;
 var smallColSize = 12 / smallColPerRow;
 var mediumColPerRow = 4;
 var mediumColSize = 12 / mediumColPerRow;
