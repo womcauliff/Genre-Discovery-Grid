@@ -1,12 +1,4 @@
-.genre-image {
-	background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 220px;
-}
-.genre-wrapper {
-	text-align: center;
-}
+
 
 
 /* Foundation Overrides */
@@ -28,19 +20,31 @@ a:hover {
 body#genreHome {
 	
 }
-#header {
-	text-align: center;
-}
-
 #appname {
 	text-align: center;
+}
+h1#genre-head {
+	font-size: 2em;
+	margin-left: -.625rem;
+	margin-right: -.625rem;
+}
+@media screen and (min-width: 40em) {
+	h1#genre-head {
+		font-size: 3em;
+		margin-left: -.9375rem;
+		margin-right: -.9375rem;
+	}
 }
 .genre-row {
 	margin-bottom: 20px;
 }
 .genre-row .column {
-	padding:0 5px;
 	margin-bottom: 10px;
+}
+@media (min-width: 768px) {
+	.genre-row .column {
+		padding:0 5px;
+	}
 }
 .genre-heading {
 	margin: 0;
@@ -49,9 +53,14 @@ body#genreHome {
 	color: white;
 }
 .genre-image {
-	background-color: white;
+	background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 220px;
+    background-color: white;
 }
 .genre-wrapper {
+	text-align: center;
 	box-shadow: 0 0 2em  #888888;
 }
 #genre-head {
@@ -76,6 +85,7 @@ body#player-body {
  with internal scrolling content.
 */
 #header {
+	text-align: center;
     width: 100%;
     height: 4.125em;
     background-color: #096572;
@@ -159,14 +169,4 @@ li.result {
 	left: 0;
 	height: 100%;
 	width: 100%;
-}
-@media screen and (min-width: 40em) {
-	h1#genre-head {
-		margin-left: -.9375rem;
-		margin-right: -.9375rem;
-	}
-}
-h1#genre-head {
-	margin-left: -.625rem;
-	margin-right: -.625rem;
 }
