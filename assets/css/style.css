@@ -122,8 +122,14 @@ body#player-body {
 	font-size: 2em;
 }
 #header #genre {
-	font-size: 1.5em;
+	font-size: 1.25em;
 	color: white;
+}
+@media (min-width: 768px) {
+	#header #genre {
+		font-size: 1.5em;
+		color: white;
+	}
 }
 
 /* Player Page Content */
