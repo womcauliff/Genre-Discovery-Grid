@@ -19,7 +19,7 @@ function Genre(headerText, gif, still, dataQuery) {
 var genres = [
 	new Genre ("pop", "assets/images/pop.gif", "assets/images/pop-still.gif", "pop"),
 	new Genre("rock", "assets/images/rock.gif", "assets/images/rockstill.gif", "classicrock"),
-	new Genre("hip hop", "assets/images/hiphopmove.gif",  "assets/images/hiphopstill.gif", "hiphop"),
+	new Genre("hip hop", "assets/images/hiphopmove.gif",  "assets/images/hiphopstill.gif", "hip-hop & rap"),
 	new Genre("electronic", "assets/images/electronic.gif", "assets/images/electronicstill.gif", "electronic"),
 	new Genre("jazz", "assets/images/jazz.gif", "assets/images/jazzstill.gif", "jazz"),
 	new Genre("vaporwave", "assets/images/vaporwave.gif", "assets/images/vaporwave-still.gif", "vaporwave"),

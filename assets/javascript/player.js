@@ -4,8 +4,7 @@ var loadedTrack = {};
 $(document).ready(function(){
 	//parse url for the genre query, add to global var
 	genreQuery = getQueryVariable("genre");
-	console.log(genreQuery);
-	$("#genre").text("#"+genreQuery);
+	$("#genre").text("#" + decodeURI(genreQuery));
 
 	//on load, display Soundcloud results first, rather than Twitter
 	displaySCResults(genreQuery);
@@ -17,15 +16,24 @@ $(document).ready(function(){
  * https://css-tricks.com/snippets/javascript/get-url-variables/
  */
 function getQueryVariable(variable) {
+// 	var query = window.location.search.substring(1);
+// 	var vars = query.split("&");
+// 	for (var i=0;i<vars.length;i++) {
+// 		var pair = vars[i].split("=");
+// 		console.log(pair);
+// 		if(pair[0] == variable){
+// 			return pair[1];
+// 		}
+// 	}
+// 	return(false);
+
+	//changed so that 'hip-hop & rap'
+	//can be sent as a single query
 	var query = window.location.search.substring(1);
-	var vars = query.split("&");
-	for (var i=0;i<vars.length;i++) {
-		var pair = vars[i].split("=");
-		if(pair[0] == variable){
-			return pair[1];
-		}
+	var pair = query.split("=");
+	if(pair[0] == variable){
+		return pair[1];
 	}
-	return(false);
 }
 
 /**
