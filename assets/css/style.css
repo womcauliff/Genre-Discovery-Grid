@@ -122,13 +122,17 @@ body#player-body {
 	font-size: 2em;
 }
 #header #genre {
-	font-size: 1.25em;
+	font-size: 1.15em;
 	color: white;
+}
+@media (min-width: 375px) {
+	#header #genre {
+		font-size: 1.25em;
+	}
 }
 @media (min-width: 768px) {
 	#header #genre {
 		font-size: 1.5em;
-		color: white;
 	}
 }
 
