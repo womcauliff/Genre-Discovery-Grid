@@ -26,7 +26,8 @@ var genres = [
 	new Genre("tropical house", "assets/images/tropicalhouse.gif", "assets/images/tropicalhouse-still.gif", "tropicalhouse"),
 	new Genre("bluegrass", "assets/images/bluegrass.gif", "assets/images/bluegrass-still.gif", "bluegrass"),
 	new Genre("dubstep", "assets/images/dubstep.gif", "assets/images/dubstepstill.gif", "dubstep"),
-	new Genre("reggae", "assets/images/reggae.gif", "assets/images/reggae_still.gif", "reggae")
+	new Genre("reggae", "assets/images/reggae.gif", "assets/images/reggae_still.gif", "reggae"),
+	new Genre("country", "assets/images/country.gif", "assets/images/country-still.gif", "country")
 ];
 
 var smallColPerRow = 1;
