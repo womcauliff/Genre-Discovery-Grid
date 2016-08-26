@@ -150,7 +150,6 @@ body#player-body {
 	margin-left: 0px;
 }
 li.result {
-    padding: 1em 0;
     border-bottom-style: solid;
     border-bottom-width: 1px;
     border-bottom-color: #e1e8ed;
@@ -159,6 +158,10 @@ li.result {
 	cursor: pointer;
     display: block;
     position: relative;
+    padding: 1em 0;
+}
+.trackResult:hover, .tweetResult:hover {
+    background-color: #f3fbe5;
 }
 .trackResult div, .tweetResult div {
     height: 3em;
