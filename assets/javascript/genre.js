@@ -93,8 +93,9 @@ $(document).ready(function() {
 		}
 	};
 });
-	// Event listener hovering over the Gifs to create some action.
-	$(document).on(
+
+// Event listener hovering over the Gifs to create some action.
+$(document).on(
     "mouseenter", //the event to listen for
     ".genre-wrapper",//the class that we are listening on
     function() {//the action to take when mouseenter event occurs
@@ -102,8 +103,7 @@ $(document).ready(function() {
         imgDiv.css('background-image',"url('" + imgDiv.data('animate')+ "')");
     }
 );
-
-	$(document).on(
+$(document).on(
     "mouseleave", //the event to listen for
     ".genre-wrapper",//the class that we are listening on 
     function() {//the action to take when mouseleave event occurs
