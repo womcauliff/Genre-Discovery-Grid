@@ -4,7 +4,7 @@ var loadedTrack = {};
 // The resource url, through which the frontend app will accesses the Twitter API.
 // In our case, we authenticate via Mooch, a Twitter OAuth proxy.
 // (https://github.com/eloquent/mooch)
-var resourceURL = "https://floating-river-39782.herokuapp.com";
+var resourceURL = "https://floating-river-39782.herokuapp.com/";
 
 $(document).ready(function(){
 	//parse url for the genre query, add to global var
