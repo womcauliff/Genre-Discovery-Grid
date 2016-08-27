@@ -5,7 +5,7 @@ Utilizes the [Soundcloud API](https://developers.soundcloud.com/docs/api/) and e
 
 See the live demo at [genregrid.herokuapp.com](http://genregrid.herokuapp.com/).
 
-Built as part of a group project for the UCF Coding Bootcamp.
+Built as part of a group project for the [UCF Coding Bootcamp](https://github.com/UCF-Coding-Boot-Camp).
 
 Contributors:
 ======================
