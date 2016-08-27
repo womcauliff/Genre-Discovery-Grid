@@ -1,6 +1,11 @@
 var genreQuery = "";
 var loadedTrack = {};
 
+// The resource url, through which the frontend app will accesses the Twitter API.
+// In our case, we authenticate via Mooch, a Twitter OAuth proxy.
+// (https://github.com/eloquent/mooch)
+var resourceURL = "https://floating-river-39782.herokuapp.com";
+
 $(document).ready(function(){
 	//parse url for the genre query, add to global var
 	genreQuery = getQueryVariable("genre");
@@ -102,18 +107,16 @@ function displaySCResults(query) {
 
 /**
  * displayTWResults()
- * Using the Twitter 1.1 API,
- * makes calls to Mooch app, hosted on heroku server.
+ * Using the Twitter 1.1 API
  */
 function displayTWResults(query) {
 	console.log("displayTWResults()");
 
 	$("#results").empty();
-	
-	var moochURL = "https://floating-river-39782.herokuapp.com/";
+
 	var twitAPIEndpoint = "1.1/search/tweets.json";
 	var hashtag = "%23" + genreQuery;
-	var request = moochURL + twitAPIEndpoint + "?" + "q=" + hashtag;
+	var request = resourceURL + twitAPIEndpoint + "?" + "q=" + hashtag;
 
 	$.ajax({
 		dataType: 'jsonp',
